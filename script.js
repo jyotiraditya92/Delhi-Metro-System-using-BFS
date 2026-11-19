@@ -1,8 +1,5 @@
 const metroGraph = {};
 
-
-// Graph construction
-
 function addStation(station) {
 
     if (!metroGraph[station]) {
@@ -71,9 +68,6 @@ function buildMetroGraph() {
 
 }
 
-
-// BFS shortest path
-
 function bfs(source, destination) {
 
     const queue = [];
@@ -113,8 +107,6 @@ function bfs(source, destination) {
         return null;
     }
 
-    // Reconstruct path
-
     const path = [];
 
     let current = destination;
@@ -131,9 +123,6 @@ function bfs(source, destination) {
     return path;
 
 }
-
-
-// Load station dropdowns
 
 function loadStations() {
 
@@ -158,9 +147,6 @@ function loadStations() {
     });
 
 }
-
-
-// Display route and estimated time
 
 function displayRoute(path) {
 
@@ -198,9 +184,6 @@ function displayRoute(path) {
     resultSection.hidden = false;
 
 }
-
-
-// Handle form submission
 
 const routeForm = document.getElementById("routeForm");
 
@@ -240,9 +223,6 @@ routeForm.addEventListener("submit", function(event) {
     displayRoute(shortestPath);
 
 });
-
-
-// Initialize application
 
 buildMetroGraph();
 loadStations();
