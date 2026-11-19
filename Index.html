@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find the shortest Delhi Metro route using BFS.">
+
+    <title>Delhi Metro Route Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">M</span>
+                <span>Metro<span class="highlight">Go</span></span>
+            </div>
+
+            <p class="tagline">Your journey, simplified.</p>
+        </header>
+
+        <main>
+
+            <!-- Hero -->
+            <section class="hero">
+                <p class="eyebrow">DELHI METRO ROUTE PLANNER</p>
+
+                <h1>Where do you want to go?</h1>
+
+                <p class="subtitle">
+                    Find the shortest route between any two
+                    Delhi Metro stations.
+                </p>
+            </section>
+
+            <!-- Journey Planner -->
+            <section class="planner-card">
+
+                <h2>Plan Your Journey</h2>
+
+                <form id="routeForm">
+
+                    <div class="input-group">
+                        <label for="source">From</label>
+
+                        <select id="source" name="source" required>
+                            <option value="" disabled selected>
+                                Select starting station
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="destination">To</label>
+
+                        <select id="destination" name="destination" required>
+                            <option value="" disabled selected>
+                                Select destination station
+                            </option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="findRouteBtn">
+                        Find Shortest Route
+                        <span>&rarr;</span>
+                    </button>
+
+                </form>
+            </section>
+
+            <!-- Route Results -->
+            <section class="result-section" id="resultSection"
+                aria-live="polite" hidden>
+
+                <div class="result-header">
+                    <h2>Your Route</h2>
+
+                    <span class="result-status" id="routeStatus">
+                        Route Found
+                    </span>
+                </div>
+
+                <div class="route-summary">
+
+                    <div class="summary-item">
+                        <span class="summary-label">Source</span>
+                        <h3 id="resultSource">--</h3>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="summary-label">Destination</span>
+                        <h3 id="resultDestination">--</h3>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="summary-label">Total Stations</span>
+                        <h3 id="totalStations">--</h3>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="summary-label">Estimated Time</span>
+                        <h3 id="estimatedTime">--</h3>
+                    </div>
+
+                </div>
+
+                <div class="route-details">
+                    <h3>Station Sequence</h3>
+
+                    <div id="routePath" class="route-path">
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Error -->
+            <div id="errorMessage" class="error-message"
+                role="alert" hidden>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built using Graphs & BFS Algorithm</p>
+            <p>Delhi Metro Route Planner | DSA Project</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
